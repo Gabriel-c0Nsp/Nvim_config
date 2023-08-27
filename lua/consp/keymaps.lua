@@ -33,6 +33,10 @@ keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
+-- Split window
+keymap('n', 'ss', ':split<Return><C-w>w', opts)
+keymap('n', 'vs', ':vsplit<Return><C-w>w', opts)
+
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -68,7 +72,7 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- salvar rapidamente
 keymap("n", "<leader>w", ":w<CR>", term_opts)
 
--- sair rapidamente 
+-- sair rapidamente
 keymap("n", "<leader>q", ":q!<CR>", term_opts)
 
 -- apagar uma palavra inteira no insert mode
@@ -81,6 +85,10 @@ keymap("n", "<Bs>", "diw", opts)
 
 -- dar tab no normal mode
 keymap("n", "<Tab>", "I<Space><Space><Esc>", opts)
+
+-- selecionar todo o arquivo com control a
+keymap('n', '<C-a>', 'ggVG', opts)
+keymap('i', '<C-a>', '<Esc>ggVG', opts)
 
 -- zero agora vai para o começo do texto, não da linha
 keymap("n", "0", "^", opts)
@@ -126,3 +134,19 @@ keymap('n', '+', ':lua IncrementNumber()<CR>', opts)
 
 -- _ para decrementar número abaixo do cursor
 keymap('n', '_', ':lua DecrementNumber()<CR>', opts)
+
+-- local opts = { noremap = true, silent = true }
+-- local term_opts = { silent = true }
+
+-- shorten funciton name
+keymap = vim.api.nvim_set_keymap
+--
+-- Stay text indent mode
+keymap("v", "H", "<gv", opts)
+keymap("v", "L", ">gv", opts)
+
+-- move text up and down
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "K", ":move '<-3<CR>gv-gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-3<CR>gv-gv", opts)
