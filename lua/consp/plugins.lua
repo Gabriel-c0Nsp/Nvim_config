@@ -79,6 +79,9 @@ use "rcarriga/nvim-dap-ui"
 -- Side lines
 use "sitiom/nvim-numbertoggle"
 
+-- Gerenciador de arquivos
+use "nvim-tree/nvim-tree.lua"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

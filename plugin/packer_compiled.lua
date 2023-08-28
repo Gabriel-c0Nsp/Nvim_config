@@ -164,6 +164,11 @@ _G.packer_plugins = {
     path = "/home/consp/.local/share/nvim/site/pack/packer/start/nvim-numbertoggle",
     url = "https://github.com/sitiom/nvim-numbertoggle"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/consp/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/consp/.local/share/nvim/site/pack/packer/start/packer.nvim",
