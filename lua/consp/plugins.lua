@@ -69,6 +69,16 @@ use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
   use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
 
+-- Java
+use "mfussenegger/nvim-jdtls"
+
+-- Debugging
+use "mfussenegger/nvim-dap"
+use "rcarriga/nvim-dap-ui"
+
+-- Side lines
+use "sitiom/nvim-numbertoggle"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
