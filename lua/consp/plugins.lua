@@ -85,6 +85,10 @@ use "nvim-tree/nvim-tree.lua"
 -- Fzf
 use "nvim-telescope/telescope.nvim"
 
+-- Autopair
+use "windwp/nvim-autopairs"
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
