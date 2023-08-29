@@ -88,6 +88,9 @@ use "nvim-telescope/telescope.nvim"
 -- Autopair
 use "windwp/nvim-autopairs"
 
+-- Comments
+use "numToStr/Comment.nvim"
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -95,6 +98,3 @@ use "windwp/nvim-autopairs"
     require("packer").sync()
   end
 end)
-
-
-
