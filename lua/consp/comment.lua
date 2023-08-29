@@ -23,7 +23,7 @@ comment.setup {
         ---Line-comment keymap
         line = 'gc',
         ---Block-comment keymap
-        block = 'gb',
+        block = 'g*',
     },
     ---LHS of extra mappings
     extra = {
