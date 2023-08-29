@@ -159,3 +159,5 @@ bufferline.setup {
 keymap('n', '<leader>m', ':BufferLinePick<CR>', opts)
 keymap('n', '<leader>b', ':bn<CR>', opts)
 keymap('n', '<leader>n', ':bp<CR>', opts)
+keymap('n', 'H', ':BufferLineMovePrev<CR>', opts)
+keymap('n', 'L', ':BufferLineMoveNext<CR>', opts)

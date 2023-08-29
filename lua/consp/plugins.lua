@@ -73,8 +73,8 @@ use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 use "mfussenegger/nvim-jdtls"
 
 -- Debugging
-use "mfussenegger/nvim-dap"
-use "rcarriga/nvim-dap-ui"
+-- use "mfussenegger/nvim-dap"
+-- use "rcarriga/nvim-dap-ui"
 
 -- Side lines
 use "sitiom/nvim-numbertoggle"
@@ -97,6 +97,9 @@ use "lewis6991/gitsigns.nvim"
 -- tabs
 use "akinsho/bufferline.nvim"
 use "moll/vim-bbye"
+
+-- Transparent neovim
+-- use "tribela/vim-transparent"
 
 
   -- Automatically set up your configuration after cloning packer.nvim
