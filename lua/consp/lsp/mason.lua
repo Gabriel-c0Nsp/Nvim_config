@@ -4,6 +4,9 @@ local servers = {
 	"pyright",
 	 "jdtls",
    "jsonls",
+   "html",
+   "cssls",
+   "tsserver",
 }
 
 local settings = {

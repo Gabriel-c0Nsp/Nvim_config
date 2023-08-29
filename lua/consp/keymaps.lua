@@ -150,3 +150,7 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-3<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-3<CR>gv-gv", opts)
+
+-- Telescope 
+keymap('n', '<leader>s', ':Telescope find_files<CR>', opts)
+keymap('n', '<leader>a', ':Telescope live_grep<CR>', opts)
