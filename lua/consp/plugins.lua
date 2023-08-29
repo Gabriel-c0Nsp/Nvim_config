@@ -99,7 +99,7 @@ use "akinsho/bufferline.nvim"
 use "moll/vim-bbye"
 
 -- Transparent neovim
--- use "tribela/vim-transparent"
+use "tribela/vim-transparent"
 
 
   -- Automatically set up your configuration after cloning packer.nvim

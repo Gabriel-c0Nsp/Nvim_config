@@ -203,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/consp/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
+  },
+  ["vim-transparent"] = {
+    loaded = true,
+    path = "/home/consp/.local/share/nvim/site/pack/packer/start/vim-transparent",
+    url = "https://github.com/tribela/vim-transparent"
   }
 }
 
