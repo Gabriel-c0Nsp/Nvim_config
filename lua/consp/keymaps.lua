@@ -138,6 +138,9 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+-- deletar buffer atual
+keymap('n', '<leader>c', ':Bdelete<CR>', opts)
+
 -- Telescope 
 keymap('n', '<leader>s', ':Telescope find_files<CR>', opts)
 keymap('n', '<leader>a', ':Telescope live_grep<CR>', opts)

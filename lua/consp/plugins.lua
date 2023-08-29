@@ -67,7 +67,6 @@ use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/mason.nvim" -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
-  use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
 
 -- Java
 use "mfussenegger/nvim-jdtls"
@@ -94,7 +93,7 @@ use "numToStr/Comment.nvim"
 -- Gitsigns
 use "lewis6991/gitsigns.nvim"
 
--- tabs
+-- Tabs
 use "akinsho/bufferline.nvim"
 use "moll/vim-bbye"
 
