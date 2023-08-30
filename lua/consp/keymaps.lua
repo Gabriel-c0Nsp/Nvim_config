@@ -33,7 +33,7 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Split window
-keymap('n', 'vh', ':split<Return><C-w>w', opts)
+keymap('n', 'vd', ':split<Return><C-w>w', opts)
 keymap('n', 'vs', ':vsplit<Return><C-w>w', opts)
 
 -- Navigate buffers

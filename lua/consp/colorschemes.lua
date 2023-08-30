@@ -17,5 +17,5 @@ local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Alterar entre dark e light mode. TODO função para alterar usando apenas um comando
-keymap('n', '<leader>l', ':color zellner<CR>', opts)
-keymap('n', '<leader>d', ':color default<CR>', opts)
+-- keymap('n', '<leader>l', ':color zellner<CR>', opts)
+-- keymap('n', '<leader>d', ':color default<CR>', opts)
