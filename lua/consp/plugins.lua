@@ -123,6 +123,9 @@ use({
 -- salvar seção de buffers
 use "Shatur/neovim-session-manager"
 
+-- salvar arquivo automaticamente
+use "pocco81/auto-save.nvim"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
