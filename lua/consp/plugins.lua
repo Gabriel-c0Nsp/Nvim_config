@@ -106,6 +106,9 @@ use "akinsho/toggleterm.nvim"
 -- emmet 
 use "mattn/emmet-vim"
 
+-- Melhor forma de navegar pelo código
+use "ggandor/lightspeed.nvim"
+
 -- sourround
 use({
     "kylechui/nvim-surround",
@@ -116,7 +119,6 @@ use({
         })
     end
 })
-
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

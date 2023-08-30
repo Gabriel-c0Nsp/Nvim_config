@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "/home/consp/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["lightspeed.nvim"] = {
+    loaded = true,
+    path = "/home/consp/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
+    url = "https://github.com/ggandor/lightspeed.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/consp/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
