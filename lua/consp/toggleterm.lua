@@ -59,7 +59,7 @@ end
 
 -- keymap
 -- abrir lazygit
-keymap('n', 'gg', ':lua _LAZYGIT_TOGGLE()<CR>', opts)
+keymap('n', '<leader>gg', ':lua _LAZYGIT_TOGGLE()<CR>', opts)
 
 -- htop
 keymap('n', '<C-p>', ':lua _HTOP_TOGGLE()<CR>', opts)
