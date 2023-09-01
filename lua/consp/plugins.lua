@@ -45,86 +45,86 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"  -- Useful lua functions used ny lots of plugins
 
--- Meus plugins aqui:
+  -- Meus plugins aqui:
 
--- Colorschemes
-use 'Lunarvim/colorschemes'
+  -- Colorschemes
+  use 'Lunarvim/colorschemes'
 
--- cmp plugins
-use "hrsh7th/nvim-cmp" -- The completion plugin
-use "hrsh7th/cmp-buffer" -- buffer completions
-use "hrsh7th/cmp-path" -- path completions
-use "hrsh7th/cmp-cmdline" -- cmdline completions
-use "saadparwaiz1/cmp_luasnip" -- snippet completions
-use "hrsh7th/cmp-nvim-lsp"
-use "hrsh7th/cmp-nvim-lua"
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp"       -- The completion plugin
+  use "hrsh7th/cmp-buffer"     -- buffer completions
+  use "hrsh7th/cmp-path"       -- path completions
+  use "hrsh7th/cmp-cmdline"    -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
 
--- snippets
-use "L3MON4D3/LuaSnip" --snippet engine
-use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  -- snippets
+  use "L3MON4D3/LuaSnip"           --snippet engine
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
--- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/mason.nvim" -- simple to use language server installer
+  -- LSP
+  use "neovim/nvim-lspconfig"             -- enable LSP
+  use "williamboman/mason.nvim"           -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
 
--- Java
-use "mfussenegger/nvim-jdtls"
+  -- Java
+  use "mfussenegger/nvim-jdtls"
 
--- Debugging
--- use "mfussenegger/nvim-dap"
--- use "rcarriga/nvim-dap-ui"
+  -- Debugging
+  -- use "mfussenegger/nvim-dap"
+  -- use "rcarriga/nvim-dap-ui"
 
--- Side lines
-use "sitiom/nvim-numbertoggle"
+  -- Side lines
+  use "sitiom/nvim-numbertoggle"
 
--- Gerenciador de arquivos
-use "nvim-tree/nvim-tree.lua"
+  -- Gerenciador de arquivos
+  use "nvim-tree/nvim-tree.lua"
 
--- Fzf
-use "nvim-telescope/telescope.nvim"
+  -- Fzf
+  use "nvim-telescope/telescope.nvim"
 
--- Autopair
-use "windwp/nvim-autopairs"
+  -- Autopair
+  use "windwp/nvim-autopairs"
 
--- Comments
-use "numToStr/Comment.nvim"
+  -- Comments
+  use "numToStr/Comment.nvim"
 
--- Gitsigns
-use "lewis6991/gitsigns.nvim"
+  -- Gitsigns
+  use "lewis6991/gitsigns.nvim"
 
--- Tabs
-use "akinsho/bufferline.nvim"
-use "moll/vim-bbye"
+  -- Tabs
+  use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
 
--- Transparent neovim
-use "tribela/vim-transparent"
+  -- Transparent neovim
+  use "tribela/vim-transparent"
 
--- Terminal (toggleterm)
-use "akinsho/toggleterm.nvim"
+  -- Terminal (toggleterm)
+  use "akinsho/toggleterm.nvim"
 
--- emmet 
-use "mattn/emmet-vim"
+  -- emmet
+  use "mattn/emmet-vim"
 
--- Melhor forma de navegar pelo código
-use "ggandor/lightspeed.nvim"
+  -- Melhor forma de navegar pelo código
+  use "ggandor/lightspeed.nvim"
 
--- sourround
-use({
+  -- sourround
+  use({
     "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
     end
-})
+  })
 
--- salvar seção de buffers
-use "Shatur/neovim-session-manager"
+  -- salvar seção de buffers
+  use "Shatur/neovim-session-manager"
 
--- salvar arquivo automaticamente
-use "pocco81/auto-save.nvim"
+  -- salvar arquivo automaticamente
+  use "pocco81/auto-save.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

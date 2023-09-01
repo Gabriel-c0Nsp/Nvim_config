@@ -5,4 +5,5 @@ local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 keymap('n', '<leader>us', ':SessionManager! save_current_session<CR>',opts )
-keymap('n', '<leader>ul', ':SessionManager! load_last_session<CR>',opts)
+keymap('n', '<leader>ul', ':SessionManager! load_session<CR>',opts)
+keymap('n', '<leader>ud', ':SessionManager! delete_session<CR>',opts)

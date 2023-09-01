@@ -56,8 +56,8 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- salvar rapidamente
-keymap("n", "<leader>w", ":w<CR>", term_opts)
+-- -- salvar rapidamente
+-- keymap("n", "<leader>w", ":w<CR>", term_opts)
 
 -- sair rapidamente
 keymap("n", "<leader>q", ":q!<CR>", term_opts)
@@ -125,9 +125,6 @@ keymap('n', '_', ':lua DecrementNumber()<CR>', opts)
 -- local opts = { noremap = true, silent = true }
 -- local term_opts = { silent = true }
 
--- shorten funciton name
-keymap = vim.api.nvim_set_keymap
---
 -- Stay text indent mode
 keymap("v", "H", "<gv", opts)
 keymap("v", "L", ">gv", opts)
@@ -144,3 +141,9 @@ keymap('n', '<leader>c', ':Bdelete<CR>', opts)
 -- Telescope 
 keymap('n', '<leader>s', ':Telescope find_files<CR>', opts)
 keymap('n', '<leader>a', ':Telescope live_grep<CR>', opts)
+
+-- Apagar highlight de pesquisas
+keymap('n', '<leader>h', ':set hlsearch!<CR>', opts)
+
+-- Copiar uma palavra inteira com mais facilidade
+keymap('n', 'yw', 'yiw', opts)

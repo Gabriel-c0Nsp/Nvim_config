@@ -1,6 +1,17 @@
 local input = require("nvim-surround.input")
 local functional = require("nvim-surround.functional")
 
+local opts = { noremap = true, silent = true }
+local term_opts = { silent = true }
+
+-- Shorten function name
+local keymap = vim.api.nvim_set_keymap
+
+local input = require("nvim-surround.input")
+local functional = require("nvim-surround.functional")
+
+
+-- default configs
 local M = {}
 
 ---@type user_options
@@ -13,7 +24,7 @@ M.default_opts = {
         normal_line = "yS",
         normal_cur_line = "ySS",
         visual = "S",
-       visual_line = "gS",
+        visual_line = "gS",
         delete = "ds",
         change = "cs",
         change_line = "cS",
@@ -22,7 +33,7 @@ M.default_opts = {
         ["("] = {
             add = { "( ", " )" },
             find = function()
-                 return M.get_selection({ motion = "a(" })
+                return M.get_selection({ motion = "a(" })
             end,
             delete = "^(. ?)().-( ?.)()$",
         },
@@ -251,3 +262,11 @@ M.default_opts = {
         end
     end,
 }
+
+-- keymaps 
+
+-- quote word
+keymap('n', 'qw', 'ysiw', term_opts)
+
+-- arround quotes
+keymap('n', 'aq', 'ysa', term_opts)
