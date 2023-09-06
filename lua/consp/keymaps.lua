@@ -82,9 +82,16 @@ keymap("n", "0", "^", opts)
 -- zero agora vai para o começo do texto, não da linha no visual moode
 keymap("v", "0", "^", opts)
 -- 1 vai para o final da linha (no lugar do $)
-keymap("n", "!", "$", opts)
+keymap("n", "-", "$", opts)
 -- 1 vai para o final da linha (no lugar do $) no visual mode
-keymap("v", "!", "$", opts)
+keymap("v", "-", "$", opts)
+
+-- deleta até o final da linha
+keymap('n', 'd-', 'd$', opts)
+
+-- copia até o final da linha
+keymap('n', 'v-', 'v$', opts)
+keymap('v', 'v-', 'v$', opts)
 
 -- enter além de descer a tela também cria linha nova se preciso
 keymap("n", "<CR>", "o<Esc>", opts)
@@ -132,8 +139,6 @@ keymap("v", "L", ">gv", opts)
 -- move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- deletar buffer atual
 keymap('n', '<leader>c', ':Bdelete<CR>', opts)
@@ -147,3 +152,14 @@ keymap('n', '<leader>h', ':set hlsearch!<CR>', opts)
 
 -- Copiar uma palavra inteira com mais facilidade
 keymap('n', 'yw', 'yiw', opts)
+
+-- selecionar uma palavra inteira de forma mais fácil
+keymap('n', 'vw', 'viw', opts)
+
+-- visual mode na vertical
+keymap('i', '<A-v>', '<C-v>', opts)
+keymap('n', '<A-v>', '<C-v>', opts)
+
+-- viajar metade de uma página para baixo
+keymap('n', '<A-j>', '<C-d>zz', opts)
+keymap('n', '<A-k>', '<C-u>zz', opts)
