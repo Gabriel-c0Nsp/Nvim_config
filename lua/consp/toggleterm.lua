@@ -58,8 +58,11 @@ function _HTOP_TOGGLE()
 end
 
 -- keymap
--- abrir lazygit
+
 keymap('n', '<leader>gg', ':lua _LAZYGIT_TOGGLE()<CR>', opts)
 
 -- htop
 keymap('n', '<C-p>', ':lua _HTOP_TOGGLE()<CR>', opts)
+
+-- run java project
+keymap('n', '<leader>r', ':TermExec cmd="runjava"<CR>' , opts)
