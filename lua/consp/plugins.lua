@@ -107,7 +107,8 @@ return packer.startup(function(use)
   use "mattn/emmet-vim"
 
   -- Melhor forma de navegar pelo código
-  use "ggandor/lightspeed.nvim"
+  -- use "ggandor/lightspeed.nvim"
+  use "ggandor/leap.nvim"
 
   -- sourround
   use({
