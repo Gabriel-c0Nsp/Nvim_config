@@ -98,7 +98,7 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
 
   -- Transparent neovim
-  use "tribela/vim-transparent"
+  -- use "tribela/vim-transparent"
 
   -- Terminal (toggleterm)
   use "akinsho/toggleterm.nvim"
