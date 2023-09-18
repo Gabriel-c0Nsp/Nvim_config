@@ -28,7 +28,7 @@ function change_colorscheme()
     current_colorscheme = current_colorscheme % #colorschemes + 1
     local new_theme = colorschemes[current_colorscheme]
     vim.cmd("colorscheme " .. new_theme)
-    vim.cmd("hi SignColumn guibg=None")
+    -- vim.cmd("hi SignColumn guibg=None")
     print("Changing color to: " .. new_theme)
     save_current_colorscheme(new_theme)
 end
