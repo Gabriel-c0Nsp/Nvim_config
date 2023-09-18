@@ -163,3 +163,16 @@ keymap('n', '<A-v>', '<C-v>', opts)
 -- viajar metade de uma página para baixo
 keymap('n', '<A-j>', '<C-d>zz', opts)
 keymap('n', '<A-k>', '<C-u>zz', opts)
+
+-- atualizar todas as configurações
+keymap('n', '<leader><leader>s', ':source %<CR>', opts)
+
+-- replace de forma mais fácil (para apenas uma palavra)
+keymap("n", "<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<left><left><left>", { noremap = true})
+
+-- modificar letra para capital case (acionar de novo para ter efeito contrário)
+keymap('n', ']]', '~', opts)
+keymap('v', ']]', '~', opts)
+
+-- keymap('n', '<leader><leader>x', 'q80/static<CR>wvw"xywvw"zyG?}<CR>n2O<Esc>k0i<Tab><Tab>public <Esc>"xpa get <Esc>"zpb]]bi<Bs><Esc>A() {<CR><Esc>I<Tab><Tab><Tab>return <Esc>"zpa;<CR><Esc>I<Tab><Tab>}<CR><CR><Esc>I<Tab><Tab>public void set <Esc>"zpb]]bi<Bs><Esc>A(<Esc>"xpa <Esc>"zpa) }<CR><Esc>I<Tab><Tab><Tab>this.<Esc>"zpa = <Esc>"zpa;<CR><Esc>I<Tab><Tab>}<Esc>q', opts)
+keymap('n', '<leader><leader>x', 'q80wwviw"xywvw"zyG?}<CR>n2O<Esc>k0i<Tab><Tab>public <Esc>"xpa get <Esc>"zpb]]bi<Bs><Esc>A() {<CR><Esc>I<Tab><Tab><Tab>return <Esc>"zpa;<CR><Esc>I<Tab><Tab>}<CR><CR><Esc>I<Tab><Tab>public void set <Esc>"zpb]]bi<Bs><Esc>A(<Esc>"xpa <Esc>"zpa) }<CR><Esc>I<Tab><Tab><Tab>this.<Esc>"zpa = <Esc>"zpa;<CR><Esc>I<Tab><Tab>}<Esc>q', opts)

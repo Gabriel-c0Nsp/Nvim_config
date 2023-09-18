@@ -65,4 +65,4 @@ keymap('n', '<leader>gg', ':lua _LAZYGIT_TOGGLE()<CR>', opts)
 keymap('n', '<C-p>', ':lua _HTOP_TOGGLE()<CR>', opts)
 
 -- run java project
-keymap('n', '<leader>r', ':TermExec cmd="runjava"<CR>' , opts)
+keymap('n', '<leader>rj', ':TermExec cmd="runjava"<CR>' , opts)
