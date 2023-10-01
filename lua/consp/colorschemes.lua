@@ -24,7 +24,7 @@ local colorschemes = {
 
 local current_colorscheme = 1
 
-function change_colorscheme()
+local function change_colorscheme()
     current_colorscheme = current_colorscheme % #colorschemes + 1
     local new_theme = colorschemes[current_colorscheme]
     vim.cmd("colorscheme " .. new_theme)

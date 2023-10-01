@@ -171,5 +171,10 @@ keymap('n', '<leader><leader>s', ':source %<CR>', opts)
 keymap("n", "<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<left><left><left>", { noremap = true})
 
 -- modificar letra para capital case (acionar de novo para ter efeito contrário)
-keymap('n', ']]', '~', opts)
-keymap('v', ']]', '~', opts)
+keymap('n', 'm', '~', opts)
+keymap('v', 'm', '~', opts)
+keymap('n', 'M', 'viw~', opts)
+keymap('v', 'M', 'viw~', opts)
+
+-- abrir barra de pesquisa
+keymap('n', '<leader>f', '/', {})
