@@ -84,7 +84,7 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  if client.name == "jdtls" or clien.name == "java" then
+  if client.name == "jdtls" or client.name == "java" then
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.semanticTokensProvider = nil
   end

@@ -1,4 +1,9 @@
-require("auto-save").setup{
+local status_ok, auto_save = pcall(require, "auto-save")
+if not status_ok then 
+  print('ERROR: Something wrong with auto-save plugin')
+end
+
+auto_save.setup{
     enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
     execution_message = {
 		message = function() -- message to print on save

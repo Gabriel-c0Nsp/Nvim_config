@@ -1,3 +1,8 @@
+local status_ok, treesitter_playground = pcall(require, "nvim-treesitter.configs")
+if not status_ok then 
+  print('ERROR: Something wrong with auto-save plugin')
+end 
+
 require "nvim-treesitter.configs".setup {
   playground = {
     enable = true,

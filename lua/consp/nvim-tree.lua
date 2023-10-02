@@ -1,3 +1,8 @@
+local status_ok, tree = pcall(require, "nvim-tree")
+if not status_ok then 
+  print('ERROR: Something wrong with auto-save plugin')
+end
+
 local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
@@ -16,7 +21,7 @@ vim.opt.termguicolors = true
 require("nvim-tree").setup()
 
 -- OR setup with some options
-require("nvim-tree").setup({
+tree.setup({
   sort_by = "case_sensitive",
   view = {
     width = 40,
