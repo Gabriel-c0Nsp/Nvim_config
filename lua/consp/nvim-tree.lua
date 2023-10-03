@@ -1,6 +1,6 @@
 local status_ok, tree = pcall(require, "nvim-tree")
 if not status_ok then 
-  print('ERROR: Something wrong with auto-save plugin')
+  print('ERROR: Something wrong with nvim-tree plugin')
 end
 
 local opts = { noremap = true, silent = true }

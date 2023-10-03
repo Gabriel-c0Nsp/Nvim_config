@@ -1,6 +1,6 @@
 local status_ok_config, session_config = pcall(require, "session_manager.config")
 if not status_ok_config then
-  print('ERROR: Something wrong with auto-save plugin')
+  print('ERROR: Something wrong with sesison plugin')
 end
 
 local status_ok, session = pcall(require, "session_manager")
