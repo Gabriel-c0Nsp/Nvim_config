@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/home/consp/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  colorschemes = {
-    loaded = true,
-    path = "/home/consp/.local/share/nvim/site/pack/packer/start/colorschemes",
-    url = "https://github.com/Lunarvim/colorschemes"
-  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/home/consp/.local/share/nvim/site/pack/packer/start/emmet-vim",

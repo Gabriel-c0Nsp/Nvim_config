@@ -1,11 +1,8 @@
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
-
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+vim.api.nvim_set_keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -17,162 +14,169 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+local i = vim.api.nvim_set_keymap
+local n = vim.api.nvim_set_keymap
+local v = vim.api.nvim_set_keymap
+local x = vim.api.nvim_set_keymap
+local t = vim.api.nvim_set_keymap
+local c = vim.api.nvim_set_keymap
+
+
+
+local normal = {
+  -- Split window
+  n('n', 'vd', ':split<Return><C-w>w', opts),
+  n('n', 'vs', ':vsplit<Return><C-w>w', opts),
+
+-- Better window navigation
+  n("n", "<C-h>", "<C-w>h", opts),
+  n("n", "<C-j>", "<C-w>j", opts),
+  n("n", "<C-k>", "<C-w>k", opts),
+  n("n", "<C-l>", "<C-w>l", opts),
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+  n("n", "<C-Up>", ":resize +2<CR>", opts),
+  n("n", "<C-Down>", ":resize -2<CR>", opts),
+  n("n", "<C-Left>", ":vertical resize -2<CR>", opts),
+  n("n", "<C-Right>", ":vertical resize +2<CR>", opts),
 
--- Split window
-keymap('n', 'vd', ':split<Return><C-w>w', opts)
-keymap('n', 'vs', ':vsplit<Return><C-w>w', opts)
+  -- Navigate buffers
+  n("n", "<S-l>", ":bnext<CR>", opts),
+  n("n", "<S-h>", ":bprevious<CR>", opts),
 
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+  -- salvar rapidamente
+  -- n("n", "<leader>w", ":w<CR>", term_opts),
 
--- Insert --
--- Press jk fast to enter
---keymap("i", "jk", "<ESC>", opts)
+  -- sair rapidamente
+  n("n", "<leader>q", ":q!<CR>", term_opts),
 
--- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+  -- apagar uma palavra inteira no normal mode e depois entrar no insert mode
+  n("n", "df", "ciw", opts),
 
--- Terminal --
--- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+  -- apagar palavra mais fácil sem precisar sair do normal mode
+  n("n", "<Bs>", "diw", opts),
 
--- salvar rapidamente
--- keymap("n", "<leader>w", ":w<CR>", term_opts)
+  -- dar tab no normal mode
+  n("n", "<Tab>", "I<Space><Space><Esc>", opts),
 
--- sair rapidamente
-keymap("n", "<leader>q", ":q!<CR>", term_opts)
+  -- selecionar todo o arquivo com control a
+  n('n', '<C-a>', 'ggVG', opts),
 
--- apagar uma palavra inteira no insert mode
-keymap("i", "df", "<Esc>ciw", opts)
--- apagar uma palavra inteira no normal mode e depois entrar no insert mode
-keymap("n", "df", "ciw", opts)
+  -- zero agora vai para o começo do texto, não da linha
+  n("n", "0", "^", opts),
 
--- apagar palavra mais fácil sem precisar sair do normal mode
-keymap("n", "<Bs>", "diw", opts)
+  -- '-' vai para o final da linha (no lugar do $)
+  n("n", "-", "$", opts),
 
--- dar tab no normal mode
-keymap("n", "<Tab>", "I<Space><Space><Esc>", opts)
+  -- deleta até o final da linha
+  n('n', 'd-', 'd$', opts),
 
--- selecionar todo o arquivo com control a
-keymap('n', '<C-a>', 'ggVG', opts)
-keymap('i', '<C-a>', '<Esc>ggVG', opts)
+  -- copia até o final da linha
+  n('n', 'y-', 'y$', opts),
 
--- zero agora vai para o começo do texto, não da linha
-keymap("n", "0", "^", opts)
--- zero agora vai para o começo do texto, não da linha no visual moode
-keymap("v", "0", "^", opts)
--- 1 vai para o final da linha (no lugar do $)
-keymap("n", "-", "$", opts)
--- 1 vai para o final da linha (no lugar do $) no visual mode
-keymap("v", "-", "$", opts)
+  -- enter além de descer a tela também cria linha nova se preciso
+  n("n", "<CR>", "o<Esc>", opts),
 
--- deleta até o final da linha
-keymap('n', 'd-', 'd$', opts)
+  -- + para incrementar número abaixo do cursor
+  n('n', '+', '<C-a>', opts),
 
--- copia até o final da linha
-keymap('n', 'v-', 'v$', opts)
-keymap('v', 'v-', 'v$', opts)
+  -- _ para decrementar número abaixo do cursor
+  n('n', '_', '<C-x>', opts),
 
--- enter além de descer a tela também cria linha nova se preciso
-keymap("n", "<CR>", "o<Esc>", opts)
+  -- deletar buffer atual
+  n('n', '<leader>c', ':Bdelete<CR>', opts),
 
-function IncrementNumber()
-  local current_line = vim.api.nvim_get_current_line()
-  local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-  local num_str = current_line:match("%d+", col)
+  -- Telescope 
+  n('n', '<leader>s', ':Telescope find_files<CR>', opts),
+  n('n', '<leader>a', ':Telescope live_grep<CR>', opts),
 
-  if num_str then
-    local number = tonumber(num_str)
-    local new_number = number + 1
-    local new_line = current_line:gsub(tostring(number), tostring(new_number), 1)
-    vim.api.nvim_buf_set_lines(0, row - 1, row, false, { new_line })
-  end
-end
+  -- Apagar highlight de pesquisas
+  n('n', '<leader>h', ':set hlsearch!<CR>', opts),
 
--- Função para decrementar o número abaixo do cursor
-function DecrementNumber()
-  local current_line = vim.api.nvim_get_current_line()
-  local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-  local num_str = current_line:match("%d+", col)
+  -- Copiar uma palavra inteira com mais facilidade
+  n('n', 'yw', 'yiw', opts),
 
-  if num_str then
-    local number = tonumber(num_str)
-    local new_number = number - 1
-    local new_line = current_line:gsub(tostring(number), tostring(new_number), 1)
-    vim.api.nvim_buf_set_lines(0, row - 1, row, false, { new_line })
-  end
-end
+  -- selecionar uma palavra inteira de forma mais fácil
+  n('n', 'vw', 'viw', opts),
 
--- + para incrementar número abaixo do cursor
-keymap('n', '+', ':lua IncrementNumber()<CR>', opts)
+  -- visual mode na vertical
+  n('n', '<A-v>', '<C-v>', opts),
 
--- _ para decrementar número abaixo do cursor
-keymap('n', '_', ':lua DecrementNumber()<CR>', opts)
+  -- viajar metade de uma página para baixo
+  n('n', '<A-j>', '<C-d>zz', opts),
+  n('n', '<A-k>', '<C-u>zz', opts),
+
+  -- atualizar todas as configurações
+  n('n', '<leader><leader>s', ':source %<CR>', opts),
+
+  -- replace de forma mais fácil (para apenas uma palavra)
+  n("n", "<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<left><left><left>", { noremap = true}),
+
+  -- abrir barra de pesquisa
+  n('n', '<leader>f', '/', {}),
+
+  -- modificar letra para capital case 
+  n('n', 'm', '~', opts),
+  n('n', 'M', 'viw~', opts),
+}
 
 
--- Stay text indent mode
-keymap("v", "H", "<gv", opts)
-keymap("v", "L", ">gv", opts)
 
--- move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+local insert_mode = {
+  -- Press jk fast to enter
+  -- i("i", "jk", "<ESC>", opts)
 
--- deletar buffer atual
-keymap('n', '<leader>c', ':Bdelete<CR>', opts)
+  -- apagar uma palavra inteira no insert mode
+  i("i", "df", "<Esc>ciw", opts),
 
--- Telescope 
-keymap('n', '<leader>s', ':Telescope find_files<CR>', opts)
-keymap('n', '<leader>a', ':Telescope live_grep<CR>', opts)
+  -- '-' vai para o final da linha (no lugar do $)
+  i('i', '<C-a>', '<Esc>ggVG', opts)
+}
 
--- Apagar highlight de pesquisas
-keymap('n', '<leader>h', ':set hlsearch!<CR>', opts)
 
--- Copiar uma palavra inteira com mais facilidade
-keymap('n', 'yw', 'yiw', opts)
 
--- selecionar uma palavra inteira de forma mais fácil
-keymap('n', 'vw', 'viw', opts)
+local visual_mode = {
+  -- Stay in indent mode
+  v("v", "<", "<gv", opts),
+  v("v", ">", ">gv", opts),
 
--- visual mode na vertical
-keymap('i', '<A-v>', '<C-v>', opts)
-keymap('n', '<A-v>', '<C-v>', opts)
+  -- zero agora vai para o começo do texto, não da linha 
+  v("v", "0", "^", opts),
 
--- viajar metade de uma página para baixo
-keymap('n', '<A-j>', '<C-d>zz', opts)
-keymap('n', '<A-k>', '<C-u>zz', opts)
+  -- '-' vai para o final da linha (no lugar do $)
+  v("v", "-", "$", opts),
 
--- atualizar todas as configurações
-keymap('n', '<leader><leader>s', ':source %<CR>', opts)
+  -- copia até o final da linha
+  v('v', 'v-', 'v$', opts),
 
--- replace de forma mais fácil (para apenas uma palavra)
-keymap("n", "<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<left><left><left>", { noremap = true})
+  -- Stay text indent mode
+  v("v", "H", "<gv", opts),
+  v("v", "L", ">gv", opts),
 
--- modificar letra para capital case (acionar de novo para ter efeito contrário)
-keymap('n', 'm', '~', opts)
-keymap('v', 'm', '~', opts)
-keymap('n', 'M', 'viw~', opts)
-keymap('v', 'M', 'viw~', opts)
+  -- visual mode na vertical
+  v('v', '<A-v>', '<C-v>', opts),
+  
+  -- modificar letra para capital case 
+  v('v', 'm', '~', opts),
+  v('v', 'M', 'viw~', opts),
+}
 
--- abrir barra de pesquisa
-keymap('n', '<leader>f', '/', {})
+
+
+local terminal_mode = {
+  -- Terminal --
+  -- Better terminal navigation
+  t("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts),
+  t("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts),
+  t("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts),
+  t("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts),
+}
+
+
+
+local visual_block_mode = {
+  -- move text up and down
+  x("x", "J", ":move '>+1<CR>gv-gv", opts),
+  x("x", "K", ":move '<-2<CR>gv-gv", opts),
+}
