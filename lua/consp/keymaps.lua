@@ -56,7 +56,7 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- -- salvar rapidamente
+-- salvar rapidamente
 -- keymap("n", "<leader>w", ":w<CR>", term_opts)
 
 -- sair rapidamente
@@ -129,8 +129,6 @@ keymap('n', '+', ':lua IncrementNumber()<CR>', opts)
 -- _ para decrementar número abaixo do cursor
 keymap('n', '_', ':lua DecrementNumber()<CR>', opts)
 
--- local opts = { noremap = true, silent = true }
--- local term_opts = { silent = true }
 
 -- Stay text indent mode
 keymap("v", "H", "<gv", opts)
