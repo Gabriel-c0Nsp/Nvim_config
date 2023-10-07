@@ -81,9 +81,10 @@ require('gitsigns').setup{
     map('n', '<leader>hR', gs.reset_buffer)
     map('n', '<leader>hp', gs.preview_hunk)
     map('n', '<leader>hb', function() gs.blame_line{full=true} end)
-    map('n', '<leader>gs', gs.toggle_current_line_blame)
+    map('n', '<leader>gl', gs.toggle_current_line_blame)
+    map('n', '<leader>gi', gs.toggle_current_line_blame)
     map('n', '<leader>hd', gs.diffthis)
-    map('n', '<leader>hD', function() gs.diffthis('~') end)
+    map('n', '<leader>gs', function() gs.diffthis('~') end)
     map('n', '<leader>td', gs.toggle_deleted)
 
     -- Text object

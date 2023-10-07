@@ -165,7 +165,6 @@ local visual_mode = {
 
 
 local terminal_mode = {
-  -- Terminal --
   -- Better terminal navigation
   t("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts),
   t("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts),
