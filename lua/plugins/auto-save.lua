@@ -1,9 +1,8 @@
-local status_ok, auto_save = pcall(require, "auto-save")
-if not status_ok then 
-  print('ERROR: Something wrong with auto-save plugin')
-end
+return {
+   "pocco81/auto-save.nvim",
+   config = function()
+require("auto-save").setup({
 
-auto_save.setup{
     enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
     execution_message = {
 		message = function() -- message to print on save
@@ -36,4 +35,6 @@ auto_save.setup{
 		before_saving = nil, -- ran before doing the actual save
 		after_saving = nil -- ran after doing the actual save
 	}
+})
+end
 }
