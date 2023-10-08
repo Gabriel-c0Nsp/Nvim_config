@@ -10,7 +10,6 @@ return {
 -- empty setup using defaults
 
 -- OR setup with some options
-require("nvim-tree").setup({
   sort_by = "case_sensitive",
   view = {
     width = 40,
@@ -22,7 +21,6 @@ require("nvim-tree").setup({
   filters = {
     dotfiles = false,
   },
-})
 
      })
 vim.g.loaded_netrw = 1

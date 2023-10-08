@@ -35,18 +35,12 @@ return {
   -- Side lines
    "sitiom/nvim-numbertoggle",
 
-
   -- Fzf
    "nvim-telescope/telescope.nvim",
 
-  -- Autopair
-   "windwp/nvim-autopairs",
 
-  -- Gitsigns
-   "lewis6991/gitsigns.nvim",
 
   -- Tabs
-   "akinsho/bufferline.nvim",
    "moll/vim-bbye",
 
   -- Transparent neovim
@@ -55,8 +49,6 @@ return {
   -- Terminal (toggleterm)
    "akinsho/toggleterm.nvim",
 
-  -- emmet
-   "mattn/emmet-vim",
 
   -- Melhor forma de navegar pelo código
    -- "ggandor/lightspeed.nvim",

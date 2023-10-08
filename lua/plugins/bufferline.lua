@@ -1,16 +1,9 @@
-local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
+return {
+   "akinsho/bufferline.nvim",
+    config = function ()
+      
+  require("bufferline").setup({
 
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
-
-
-local status_ok, bufferline = pcall(require, "bufferline")
-if not status_ok then
-  return
-end
-
-bufferline.setup {
   options = {
     numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
     close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
@@ -153,11 +146,18 @@ bufferline.setup {
 --       guibg = { attribute = "bg", highlight = "Normal" },
 --     },
 --   }
- }
+  })
+local opts = { noremap = true, silent = true }
+local term_opts = { silent = true }
 
+-- Shorten function name
+local keymap = vim.api.nvim_set_keymap
  -- keymaps
 keymap('n', '<leader>m', ':BufferLinePick<CR>', opts)
 keymap('n', '<leader>n', ':bn<CR>', opts)
 keymap('n', '<leader>b', ':bp<CR>', opts)
 keymap('n', 'H', ':BufferLineMovePrev<CR>', opts)
 keymap('n', 'L', ':BufferLineMoveNext<CR>', opts)
+    end
+}
+

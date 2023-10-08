@@ -1,8 +1,7 @@
-local status_ok, gitsigns = pcall(require, "gitsigns")
-if not status_ok then
-  return
-end
-
+return {
+   "lewis6991/gitsigns.nvim",
+   config = function ()
+    
 require('gitsigns').setup {
   signs = {
     add          = { text = '┆' },
@@ -90,4 +89,6 @@ require('gitsigns').setup{
     -- Text object
     map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
+}
+   end
 }
