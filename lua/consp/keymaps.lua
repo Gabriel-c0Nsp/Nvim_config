@@ -87,10 +87,6 @@ local normal = {
   -- deletar buffer atual
   n('n', '<leader>c', ':Bdelete<CR>', opts),
 
-  -- Telescope 
-  n('n', '<leader>s', ':Telescope find_files<CR>', opts),
-  n('n', '<leader>a', ':Telescope live_grep<CR>', opts),
-
   -- Apagar highlight de pesquisas
   n('n', '<leader>h', ':set hlsearch!<CR>', opts),
 
@@ -179,3 +175,6 @@ local visual_block_mode = {
   x("x", "J", ":move '>+1<CR>gv-gv", opts),
   x("x", "K", ":move '<-2<CR>gv-gv", opts),
 }
+
+
+vim.cmd [[let g:user_emmet_leader_key=',']]

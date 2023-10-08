@@ -15,8 +15,4 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Install your plugins here
-require('lazy').setup({
-  {import = 'plugins'}
-  -- {import = 'plugins.lsp'}
-})
+require('lazy').setup({{import = 'plugins'}, {import = 'plugins.lsp'}})

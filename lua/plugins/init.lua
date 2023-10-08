@@ -12,11 +12,6 @@ return {
    "L3MON4D3/LuaSnip", 
    "rafamadriz/friendly-snippets", 
 
-  -- LSP
-   "neovim/nvim-lspconfig",       
-   "williamboman/mason.nvim",         
-   "williamboman/mason-lspconfig.nvim",
-
   -- Java
    "mfussenegger/nvim-jdtls",
 
@@ -32,7 +27,9 @@ return {
 
   -- Transparent neovim
    -- "tribela/vim-transparent",
-
+   
+   -- emmet
+      "mattn/emmet-vim",
 
 
   -- Melhor forma de navegar pelo código

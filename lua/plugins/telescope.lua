@@ -1,12 +1,16 @@
 return {
    "nvim-telescope/telescope.nvim",
+   dependencies = {
+     "nvim-lua/plenary.nvim",
+     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+   },
    config = function ()
     
+local telescope = require("telescope")
+local actions = require ("telescope.actions")
 
+telescope.setup({
 
-local actions = require "telescope.actions"
-
-require("telescope").setup {
   defaults = {
 
     prompt_prefix = " ",
@@ -78,7 +82,12 @@ require("telescope").setup {
       },
     },
   },
-}
+})
+
+telescope.load_extension("fzf");
+
+  vim.api.nvim_set_keymap('n', '<leader>s', ':Telescope find_files<CR>', {})
+  vim.api.nvim_set_keymap('n', '<leader>a', ':Telescope live_grep<CR>', {})
 
    end
 }
