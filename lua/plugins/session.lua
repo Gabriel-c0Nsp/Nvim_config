@@ -1,16 +1,10 @@
-local status_ok_config, session_config = pcall(require, "session_manager.config")
-if not status_ok_config then
-  print('ERROR: Something wrong with sesison plugin')
-end
-
-local status_ok, session = pcall(require, "session_manager")
-if not status_ok then 
-  print('ERROR: Something wrong with auto-save plugin')
-end
-
+return {
+   "Shatur/neovim-session-manager",
+   config = function ()
+    
 local Path = require('plenary.path')
-local config = session_config
-session.setup({
+local config = require("session_manager.config")
+require("session_manager").setup({
   sessions_dir = Path:new(vim.fn.stdpath('data'), 'sessions'), -- The directory where the session files will be saved.
   session_filename_to_dir = session_filename_to_dir, -- Function that replaces symbols into separators and colons to transform filename into a session directory.
   dir_to_session_filename = dir_to_session_filename, -- Function that replaces separators and colons into special symbols to transform session directory into a filename. Should use `vim.loop.cwd()` if the passed `dir` is `nil`.
@@ -38,3 +32,5 @@ local keymap = vim.api.nvim_set_keymap
 keymap('n', '<leader>us', ':SessionManager! save_current_session<CR>',opts )
 keymap('n', '<leader>ul', ':SessionManager! load_session<CR>',opts)
 keymap('n', '<leader>ud', ':SessionManager! delete_session<CR>',opts)
+   end
+}

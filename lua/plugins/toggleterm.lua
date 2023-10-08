@@ -1,15 +1,9 @@
-local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
+return {
+   "akinsho/toggleterm.nvim",
+  config = function ()
+    
 
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
-
-local status_ok, toggleterm = pcall(require, "toggleterm")
-if not status_ok then
-	return
-end
-
-toggleterm.setup({
+require("toggleterm").setup({
 	size = 20,
 	open_mapping = [[<c-t>]],
 	hide_numbers = true,
@@ -57,6 +51,12 @@ function _HTOP_TOGGLE()
 	htop:toggle()
 end
 
+
+local opts = { noremap = true, silent = true }
+local term_opts = { silent = true }
+
+-- Shorten function name
+local keymap = vim.api.nvim_set_keymap
 -- keymap
 
 keymap('n', '<leader>gg', ':lua _LAZYGIT_TOGGLE()<CR>', opts)
@@ -66,3 +66,5 @@ keymap('n', '<C-p>', ':lua _HTOP_TOGGLE()<CR>', opts)
 
 -- run java project
 keymap('n', '<leader>rj', ':TermExec cmd="runjava"<CR>' , opts)
+  end
+}

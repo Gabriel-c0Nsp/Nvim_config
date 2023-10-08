@@ -1,4 +1,18 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
+return {
+   "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
+  dependencies = {
+
+   "hrsh7th/cmp-buffer",     -- buffer completions
+   "hrsh7th/cmp-path",       -- path completions
+   "hrsh7th/cmp-cmdline",    -- cmdline completions
+   "saadparwaiz1/cmp_luasnip", -- snippet completions
+   "hrsh7th/cmp-nvim-lsp",
+   "hrsh7th/cmp-nvim-lua",
+
+  }, 
+  config = function ()
+    local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
   return
 end
@@ -129,4 +143,6 @@ cmp.setup {
     ghost_text = false,
     native_menu = false,
   },
+}
+  end
 }

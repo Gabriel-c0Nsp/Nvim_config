@@ -7,14 +7,6 @@ return {
   -- Colorschemes
   -- use 'Lunarvim/colorschemes'
 
-  -- cmp plugins
-   "hrsh7th/nvim-cmp",       -- The completion plugin
-   "hrsh7th/cmp-buffer",     -- buffer completions
-   "hrsh7th/cmp-path",       -- path completions
-   "hrsh7th/cmp-cmdline",    -- cmdline completions
-   "saadparwaiz1/cmp_luasnip", -- snippet completions
-   "hrsh7th/cmp-nvim-lsp",
-   "hrsh7th/cmp-nvim-lua",
 
   -- snippets
    "L3MON4D3/LuaSnip", 
@@ -35,39 +27,17 @@ return {
   -- Side lines
    "sitiom/nvim-numbertoggle",
 
-  -- Fzf
-   "nvim-telescope/telescope.nvim",
-
-
-
   -- Tabs
    "moll/vim-bbye",
 
   -- Transparent neovim
    -- "tribela/vim-transparent",
 
-  -- Terminal (toggleterm)
-   "akinsho/toggleterm.nvim",
 
 
   -- Melhor forma de navegar pelo código
    -- "ggandor/lightspeed.nvim",
-   "ggandor/leap.nvim",
-
-  -- sourround
-  ({
-    "kylechui/nvim-surround"
-    -- tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-  }),
-
-  -- salvar seção de buffers
-   "Shatur/neovim-session-manager",
-
-  -- treesitter 
-   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-  },
+   
    {
     "nvim-treesitter/playground",
     event = "BufRead",
