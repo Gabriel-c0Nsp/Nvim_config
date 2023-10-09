@@ -1,43 +1,40 @@
 return {
-  -- An implementation of the Popup API from vim in Neovim
-   "nvim-lua/popup.nvim",    
--- Useful lua functions used ny lots of plugins
-   "nvim-lua/plenary.nvim", 
+	-- An implementation of the Popup API from vim in Neovim
+	"nvim-lua/popup.nvim",
+	-- Useful lua functions used ny lots of plugins
+	"nvim-lua/plenary.nvim",
 
-  -- Colorschemes
-  -- use 'Lunarvim/colorschemes'
+	-- Colorschemes
+	-- use 'Lunarvim/colorschemes'
 
+	-- snippets
+	"L3MON4D3/LuaSnip",
+	"rafamadriz/friendly-snippets",
 
-  -- snippets
-   "L3MON4D3/LuaSnip", 
-   "rafamadriz/friendly-snippets", 
+	-- Java
+	"mfussenegger/nvim-jdtls",
 
-  -- Java
-   "mfussenegger/nvim-jdtls",
+	-- Debugging
+	-- "mfussenegger/nvim-dap",
+	-- "rcarriga/n,vim-dap-ui",
 
-  -- Debugging
-   -- "mfussenegger/nvim-dap",
-   -- "rcarriga/n,vim-dap-ui",
+	-- Side lines
+	"sitiom/nvim-numbertoggle",
 
-  -- Side lines
-   "sitiom/nvim-numbertoggle",
+	-- Tabs
+	"moll/vim-bbye",
 
-  -- Tabs
-   "moll/vim-bbye",
+	-- Transparent neovim
+	-- "tribela/vim-transparent",
 
-  -- Transparent neovim
-   -- "tribela/vim-transparent",
-   
-   -- emmet
-      "mattn/emmet-vim",
+	-- emmet
+	"mattn/emmet-vim",
 
+	-- Melhor forma de navegar pelo código
+	-- "ggandor/lightspeed.nvim",
 
-  -- Melhor forma de navegar pelo código
-   -- "ggandor/lightspeed.nvim",
-   
-   {
-    "nvim-treesitter/playground",
-    event = "BufRead",
-  },
-
+	{
+		"nvim-treesitter/playground",
+		event = "BufRead",
+	},
 }
