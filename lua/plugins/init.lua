@@ -14,7 +14,7 @@ return {
 	-- Java
 	"mfussenegger/nvim-jdtls",
 
-	-- Debugging
+	-- Debugging -- isso não funciona por enquanto
 	-- "mfussenegger/nvim-dap",
 	-- "rcarriga/n,vim-dap-ui",
 
@@ -26,9 +26,6 @@ return {
 
 	-- Transparent neovim
 	-- "tribela/vim-transparent",
-
-	-- emmet
-	"mattn/emmet-vim",
 
 	-- Melhor forma de navegar pelo código
 	-- "ggandor/lightspeed.nvim",

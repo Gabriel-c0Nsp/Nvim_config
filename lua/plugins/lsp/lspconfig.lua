@@ -93,12 +93,22 @@ return {
 			on_attach = function(client, bufnr)
 				client.server_capabilities.semanticTokensProvider = nil
 			end,
+			handlers = {
+				["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+					virtual_text = false,
+				}),
+			},
 		})
 
 		lspconfig["lua_ls"].setup({
 			on_attach = function(client, bufnr)
 				client.server_capabilities.semanticTokensProvider = nil
 			end,
+			-- handlers = {
+			-- 	["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+			-- 		virtual_text = false,
+			-- 	}),
+			-- },
 			settings = { -- custom settings for lua
 				Lua = {
 					-- make the language server recognize "vim" global

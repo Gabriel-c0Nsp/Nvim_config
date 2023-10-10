@@ -43,7 +43,7 @@ local normal = {
 	n("n", "<S-h>", ":bprevious<CR>", opts),
 
 	-- salvar rapidamente
-	-- n("n", "<leader>w", ":w<CR>", term_opts),
+	n("n", "<leader>w", ":w<CR>", term_opts),
 
 	-- sair rapidamente
 	n("n", "<leader>q", ":q!<CR>", term_opts),
@@ -165,4 +165,3 @@ local visual_block_mode = {
 	x("x", "K", ":move '<-2<CR>gv-gv", opts),
 }
 
-vim.cmd([[let g:user_emmet_leader_key=',']])
