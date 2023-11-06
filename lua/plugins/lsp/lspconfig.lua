@@ -90,25 +90,25 @@ return {
 		})
 
 		lspconfig["jdtls"].setup({
+			capabilities = capabilities,
 			on_attach = function(client, bufnr)
+				-- Mantenha as configurações originais do on_attach
+				on_attach(client, bufnr)
+
+				-- Desative o suporte para Semantic Tokens
 				client.server_capabilities.semanticTokensProvider = nil
+
+				-- Configurar os handlers para desativar o "virtual_text" para diagnósticos
+				client.handlers["textDocument/publishDiagnostics"] =
+					vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+						virtual_text = false,
+					})
 			end,
-			handlers = {
-				["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-					virtual_text = false,
-				}),
-			},
 		})
 
 		lspconfig["lua_ls"].setup({
-			on_attach = function(client, bufnr)
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
-			-- handlers = {
-			-- 	["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-			-- 		virtual_text = false,
-			-- 	}),
-			-- },
+			capabilities = capabilities,
+			on_attach = on_attach,
 			settings = { -- custom settings for lua
 				Lua = {
 					-- make the language server recognize "vim" global
