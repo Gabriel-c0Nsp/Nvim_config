@@ -57,7 +57,7 @@ return {
 				},
 			},
 			popup_layout = {
-				default = "right",
+				default = "center",
 				center = {
 					width = "80%",
 					height = "80%",
@@ -161,7 +161,7 @@ return {
 
 		-- open ChatGPT
 		keymap("n", "<leader>gpo", ":ChatGPT<cr>", term_opts)
-		-- ChatGPT edit edit with instructions
+		-- ChatGPT run options 
 		keymap("n", "<leader>gpr", ":ChatGPTRun ", {})
 
 	end,
