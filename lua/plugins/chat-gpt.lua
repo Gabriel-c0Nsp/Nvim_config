@@ -7,21 +7,13 @@ return {
 			yank_register = "+",
 			edit_with_instructions = {
 				diff = false,
-				keymaps = {
-					close = "<C-c>",
-					accept = "<C-y>",
-					toggle_diff = "<C-d>",
-					toggle_settings = "<C-o>",
-					cycle_windows = "<Tab>",
-					use_output_as_input = "<C-i>",
-				},
 			},
 			chat = {
 				welcome_message = WELCOME_MESSAGE,
 				loading_text = "Loading, please wait ...",
 				question_sign = "?",
 				answer_sign = "ﮧ",
-				max_line_length = 120,
+				max_line_length = 240,
 				sessions_window = {
 					border = {
 						style = "rounded",
@@ -37,14 +29,14 @@ return {
 					close = { "<C-e>" },
 					yank_last = "<C-s>",
 					yank_last_code = "<C-y>",
-					scroll_up = "<C-u>",
-					scroll_down = "<C-d>",
+					scroll_up = "<C-k>",
+					scroll_down = "<C-j>",
 					new_session = "<C-n>",
 					cycle_windows = "<Tab>",
 					cycle_modes = "<C-f>",
-					next_message = "<C-j>",
-					prev_message = "<C-k>",
-					select_session = "<Space>",
+					next_message = "<C-l>",
+					prev_message = "<C-h>",
+					select_session = "<C-m>",
 					rename_session = "r",
 					delete_session = "d",
 					draft_message = "<C-d>",
@@ -57,7 +49,7 @@ return {
 				},
 			},
 			popup_layout = {
-				default = "center",
+				default = "right",
 				center = {
 					width = "80%",
 					height = "80%",
@@ -161,9 +153,8 @@ return {
 
 		-- open ChatGPT
 		keymap("n", "<leader>gpo", ":ChatGPT<cr>", term_opts)
-		-- ChatGPT run options 
+		-- ChatGPT run options
 		keymap("n", "<leader>gpr", ":ChatGPTRun ", {})
-
 	end,
 	dependencies = {
 		"MunifTanjim/nui.nvim",
