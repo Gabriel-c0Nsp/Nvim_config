@@ -12,7 +12,7 @@ return {
 				welcome_message = WELCOME_MESSAGE,
 				loading_text = "Loading, please wait ...",
 				question_sign = "?",
-				answer_sign = "ﮧ",
+				answer_sign = "!",
 				max_line_length = 240,
 				sessions_window = {
 					border = {
@@ -153,8 +153,22 @@ return {
 
 		-- open ChatGPT
 		keymap("n", "<leader>gpo", ":ChatGPT<cr>", term_opts)
+
 		-- ChatGPT run options
 		keymap("n", "<leader>gpr", ":ChatGPTRun ", {})
+
+		-- ChatGPT run options: fix bugs
+		keymap("n", "<leader>gpf", "<C-a>y:ChatGPTRun fix_bugs<cr>", {})
+		keymap("x", "<leader>gpf", ":ChatGPTRun fix_bugs<cr>", {})
+		keymap("v", "<leader>gpf", ":ChatGPTRun fix_bugs<cr>", {})
+
+    -- ChatGPT edit with instructions
+		keymap("x", "<leader>gpi", ":'<,'>ChatGPTEditWithInstructions<cr>", term_opts)
+		keymap("v", "<leader>gpi", ":'<,'>ChatGPTEditWithInstructions<cr>", term_opts)
+
+    -- ChatGPT complete code
+    keymap("x", "<leader>gpc", ":'<,'>ChatGPTCompleteCode<cr>", term_opts)
+
 	end,
 	dependencies = {
 		"MunifTanjim/nui.nvim",
