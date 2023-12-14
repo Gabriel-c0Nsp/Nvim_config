@@ -16,7 +16,7 @@ return {
 					debounce = 1,
 					auto_refresh = true,
 					keymap = {
-						accept = "<tab>",
+						accept = "<A-l>",
 						accept_word = false,
 						accept_line = false,
 						next = "<C-n>",
