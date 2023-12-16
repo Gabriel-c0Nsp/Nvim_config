@@ -18,7 +18,7 @@ end
 local opts = { noremap = true, silent = true }
 
 local colorschemes = {
-	"default",
+	"darkplus",
 	"zellner",
 }
 

@@ -78,10 +78,10 @@ return {
 			on_attach = on_attach,
 		})
 
-    lspconfig["tailwindcss"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+		lspconfig["tailwindcss"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
 
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
@@ -103,7 +103,6 @@ return {
 				-- Desative o suporte para Semantic Tokens
 				client.server_capabilities.semanticTokensProvider = nil
 
-				-- Configurar os handlers para desativar o "virtual_text" para diagnósticos
 				client.handlers["textDocument/publishDiagnostics"] =
 					vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 						virtual_text = false,

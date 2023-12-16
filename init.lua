@@ -1,5 +1,5 @@
-require "consp.options"
-require "consp.keymaps"
-require "consp.lazy"
-require "consp.colorschemes"
-require "consp.macros"
+require("consp.options")
+require("consp.keymaps")
+require("consp.lazy")
+require("consp.colorschemes")
+require("consp.macros")

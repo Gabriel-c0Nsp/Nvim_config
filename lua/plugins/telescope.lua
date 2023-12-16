@@ -87,5 +87,7 @@ return {
 
 		vim.api.nvim_set_keymap("n", "<leader>s", ":Telescope find_files<CR>", {})
 		vim.api.nvim_set_keymap("n", "<leader>a", ":Telescope live_grep<CR>", {})
+    vim.api.nvim_set_keymap("n", "<leader>gf", ":Telescope git_files<CR>", {})
+    vim.api.nvim_set_keymap("n", "<leader>ht", ":Telescope help_tags<CR>", {})
 	end,
 }
