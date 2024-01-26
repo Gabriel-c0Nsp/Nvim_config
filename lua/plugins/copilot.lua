@@ -17,8 +17,8 @@ return {
 					auto_refresh = true,
 					keymap = {
 						accept = "<A-l>",
-						accept_word = false,
-						accept_line = false,
+						accept_word = "<A-h>",
+						accept_line = "<A-i>",
 						next = "<C-n>",
 						prev = "<C-b>",
 						dismiss = "<A-o>",

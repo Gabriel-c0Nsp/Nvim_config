@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	config = function()
 		require("chatgpt").setup({
-			api_key_cmd = vim.fn.getenv("OPENAI_API_KEY"),
+			api_key_cmd = "echo $OPENAI_API_KEY",
 			yank_register = "+",
 			edit_with_instructions = {
 				diff = false,

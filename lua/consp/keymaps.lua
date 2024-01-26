@@ -49,10 +49,10 @@ local normal = {
 	n("n", "<leader>q", ":q!<CR>", term_opts),
 
 	-- apagar uma palavra inteira no normal mode e depois entrar no insert mode
-	n("n", "df", "ciw", opts),
+  n("n", "<C-BS>", "bdiwi", opts),
 
 	-- apagar palavra mais fácil sem precisar sair do normal mode
-	n("n", "<Bs>", "diw", opts),
+	n("n", "<Bs>", "bdiw", opts),
 
 	-- dar tab no normal mode
 	n("n", "<Tab>", "I<Space><Space><Esc>", opts),
@@ -119,7 +119,7 @@ local insert_mode = {
 	-- i("i", "jk", "<ESC>", opts)
 
 	-- apagar uma palavra inteira no insert mode
-	i("i", "df", "<Esc>ciw", opts),
+  i("i", "<C-BS>", "<Esc>bdiwi", opts),
 
 	-- '-' vai para o final da linha (no lugar do $)
 	i("i", "<C-a>", "<Esc>ggVG", opts),
