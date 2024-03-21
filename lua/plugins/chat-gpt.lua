@@ -169,6 +169,10 @@ return {
     -- ChatGPT complete code
     keymap("x", "<leader>gpc", ":'<,'>ChatGPTCompleteCode<cr>", term_opts)
 
+    -- ChatGPT explain code
+		keymap("x", "<leader>gpe", ":ChatGPTRun explain_code<cr>", {})
+		keymap("v", "<leader>gpe", ":ChatGPTRun explain_code<cr>", {})
+
 	end,
 	dependencies = {
 		"MunifTanjim/nui.nvim",

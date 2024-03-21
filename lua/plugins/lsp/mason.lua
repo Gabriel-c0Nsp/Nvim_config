@@ -19,6 +19,9 @@ return {
 				"tailwindcss",
 				"lua_ls",
 				"emmet_ls",
+        "pyright",
+        "clangd",
+        "lua_ls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed

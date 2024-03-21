@@ -21,7 +21,7 @@ local x = vim.api.nvim_set_keymap
 local t = vim.api.nvim_set_keymap
 local c = vim.api.nvim_set_keymap
 
-local normal = {
+local normal_mode = {
 	-- Split window
 	n("n", "vd", ":split<Return><C-w>w", opts),
 	n("n", "vs", ":vsplit<Return><C-w>w", opts),
@@ -49,10 +49,10 @@ local normal = {
 	n("n", "<leader>q", ":q!<CR>", term_opts),
 
 	-- apagar uma palavra inteira no normal mode e depois entrar no insert mode
-  n("n", "<C-BS>", "bviwdi", opts),
+  n("n", "<C-BS>", "blviwdi", opts),
 
 	-- apagar palavra mais fácil sem precisar sair do normal mode
-	n("n", "<Bs>", "bviwd", opts),
+	n("n", "<Bs>", "blviwd", opts),
 
 	-- dar tab no normal mode
 	n("n", "<Tab>", "I<Space><Space><Esc>", opts),
@@ -119,7 +119,7 @@ local insert_mode = {
 	-- i("i", "jk", "<ESC>", opts)
 
 	-- apagar uma palavra inteira no insert mode
-  i("i", "<C-BS>", "<Esc>bviwdi", opts),
+  i("i", "<C-BS>", "<Esc>blviwdi", opts),
 
 	-- '-' vai para o final da linha (no lugar do $)
 	i("i", "<C-a>", "<Esc>ggVG", opts),
