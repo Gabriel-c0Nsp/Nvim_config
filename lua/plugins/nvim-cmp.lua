@@ -36,7 +36,7 @@ return {
 				["<A-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
 				["<A-j>"] = cmp.mapping.select_next_item(), -- next suggestion
 				["<A-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-				["<A-i>"] = cmp.mapping({
+				["<A-Bs>"] = cmp.mapping({
 					i = cmp.mapping.abort(),
 					c = cmp.mapping.close(),
 				}),
