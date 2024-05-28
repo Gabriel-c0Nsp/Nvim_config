@@ -147,6 +147,20 @@ return {
       end,
     })
 
+    lspconfig["kotlin_language_server"].setup({
+      capabilities = capabilities,
+      on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+
+        client.server_capabilities.semanticTokensProvider = nil
+
+        client.handlers["textDocument/publishDiagnostics"] =
+            vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+              virtual_text = false,
+            })
+      end,
+    })
+
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,
       on_attach = function(client, bufnr)
